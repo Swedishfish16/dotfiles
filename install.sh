@@ -53,6 +53,7 @@ install_neovim() {
 install_dependencies() {
 	sudo apt install -y fuse
 	# Add other dependencies here
+	sudo apt install -y clang++
 }
 
 #Main function
