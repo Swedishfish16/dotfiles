@@ -1,30 +1,25 @@
 #!/bin/bash
-
-
-#Define array of configurations and their corresponding symbolic link targets
-configurations=(
-	"$HOME/dotfiles/.zshrc:$HOME/.zshrc"
-	"$HOME/.tmux:$HOME/.tmux"
-	"$HOME/.tmux.conf:$HOME/.tmux.conf"
-	"$HOME/.bashrc:$HOME/.bashrc"
-	"$HOME/.config:$HOME/.config"
-	"$HOME/.vimrc:$HOME/.vimrc"
-) 
+ 
 
 #Functon to create symbolic links
 create_links() {
-	for config in "${configurations[@]}"; do
-		#split config and link target using:
-		IFS=':' read -ra parts <<< "$config"
-		config_file="${parts[0]}"
-		config_target="${parts[1]}"
+	
+	# .zshrc
+	ln -sfn "~/dotfiles/.zshrc" "~/.zshrc"
+	echo "Created symbolic link for $HOME/dotfiles/.zshrc at $HOME/.zshrc"
 
-		#Create symlink
-		ln -s "$config_file" "$link_target"
+	#.tmux.conf
+	ln -sfn "~/dotfiles/.tmux.conf" "~/.tmux.conf"
+	echo "Created symbolic link for $HOME/dotfiles/.tmux.conf at $HOME/.tmux.conf"
+	
+	# .tmux directory
+	ln -sfn "~/dotfiles/.tmux" "~/.tmux"
+	echo "Created symbolic link for $HOME/dotfiles/.tmux.conf at $HOME/.tmux"
+	
+	# .config directory (for neovim and others)
+	ln -sfn "~/dotfiles/.config" "~/.config"
+	echo "Created symbolic link for $HOME/dotfiles/.tmux.conf at $HOME/.config"
 
-		#Print message
-		echo "Created symbolic link for $config_file at $link_target"
-	done
 }
 
 #Function to install Zsh
