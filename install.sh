@@ -3,12 +3,12 @@
 
 #Define array of configurations and their corresponding symbolic link targets
 configurations=(
-	"~/dotfiles/.zshrc ~/.zshrc"
-	"~/dotfiles/.tmux ~/.tmux"
-	"~/dotfiles/.tmux.conf ~/.tmux.conf"
-	"~/dotfiles/.bashrc ~/.bashrc"
-	"~/dotfiles/.config ~/.config"
-	"~/dotfiles/.vimrc ~/.vimrc"
+	"$HOME/dotfiles/.zshrc:$HOME/.zshrc"
+	"$HOME/.tmux:$HOME/.tmux"
+	"$HOME/.tmux.conf:$HOME/.tmux.conf"
+	"$HOME/.bashrc:$HOME/.bashrc"
+	"$HOME/.config:$HOME/.config"
+	"$HOME/.vimrc:$HOME/.vimrc"
 ) 
 
 #Functon to create symbolic links
