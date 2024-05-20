@@ -51,9 +51,11 @@ install_neovim() {
 
 #Install dependencies
 install_dependencies() {
-	sudo apt install -y fuse
-	# Add other dependencies here
+	sudo apt update
+	sudo apt upgrade
+	sudo apt install -y build-essential
 	sudo apt install -y clang
+	sudo apt install -y fuse
 }
 
 #Main function
