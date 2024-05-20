@@ -6,18 +6,22 @@ DOTFILES_DIR="$HOME/dotfiles"
 create_links() {
 	
 	# .zshrc
+	rm -rf "$HOME/.zshrc"
 	ln -sfn "$DOTFILES_DIR/.zshrc" "$HOME/.zshrc"
 	echo "Created symbolic link for $HOME/dotfiles/.zshrc at $HOME/.zshrc"
 
 	#.tmux.conf
+	rm -rf "$HOME/.tmux.conf"
 	ln -sfn "$DOTFILES_DIR/.tmux.conf" "$HOME/.tmux.conf"
 	echo "Created symbolic link for $HOME/dotfiles/.tmux.conf at $HOME/.tmux.conf"
 	
 	# .tmux directory
+	rm -rf "$HOME/.tmux"
 	ln -sfn "$DOTFILES_DIR/.tmux" "$HOME/.tmux"
 	echo "Created symbolic link for $HOME/dotfiles/.tmux.conf at $HOME/.tmux"
 	
 	# .config directory (for neovim and others)
+	rm -rf "$HOME/.config"
 	ln -sfn "$DOTFILES_DIR/.config" "$HOME/.config"
 	echo "Created symbolic link for $HOME/dotfiles/.tmux.conf at $HOME/.config"
 
