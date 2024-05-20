@@ -1,23 +1,24 @@
 #!/bin/bash
  
+DOTFILES_DIR="$HOME/dotfiles"
 
 #Functon to create symbolic links
 create_links() {
 	
 	# .zshrc
-	ln -sfn "~/dotfiles/.zshrc" "~/.zshrc"
+	ln -sfn "$DOTFILES_DIR/.zshrc" "$HOME/.zshrc"
 	echo "Created symbolic link for $HOME/dotfiles/.zshrc at $HOME/.zshrc"
 
 	#.tmux.conf
-	ln -sfn "~/dotfiles/.tmux.conf" "~/.tmux.conf"
+	ln -sfn "$DOTFILES_DIR/.tmux.conf" "$HOME/.tmux.conf"
 	echo "Created symbolic link for $HOME/dotfiles/.tmux.conf at $HOME/.tmux.conf"
 	
 	# .tmux directory
-	ln -sfn "~/dotfiles/.tmux" "~/.tmux"
+	ln -sfn "$DOTFILES_DIR/.tmux" "$HOME/.tmux"
 	echo "Created symbolic link for $HOME/dotfiles/.tmux.conf at $HOME/.tmux"
 	
 	# .config directory (for neovim and others)
-	ln -sfn "~/dotfiles/.config" "~/.config"
+	ln -sfn "$DOTFILES_DIR/.config" "$HOME/.config"
 	echo "Created symbolic link for $HOME/dotfiles/.tmux.conf at $HOME/.config"
 
 }
