@@ -49,8 +49,17 @@ install_neovim() {
 	sudo mv /tmp/nvim.appimage /usr/local/bin/nvim
 }
 
+#Install dependencies
+install_dependencies() {
+	sudo apt install -y fuse
+	# Add other dependencies here
+}
+
 #Main function
 main() {
+	echo "Installing dependencies..."
+	install_dependencies
+
 	echo "Installing ZSH..."
 	install_zsh
 
