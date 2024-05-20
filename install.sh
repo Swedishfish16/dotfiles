@@ -32,6 +32,11 @@ install_zsh() {
 	sudo apt install zsh
 }
 
+#Function to install ohmyzsh
+install_ohmyzsh(){
+	sh -c "$(curl -fsSL https://raw.githubusercontent.com/ohmyzsh/ohmyzsh/master/tools/install.sh)"
+}
+
 #Function to install Tmux
 install_tmux(){
 	sudo apt install tmux
