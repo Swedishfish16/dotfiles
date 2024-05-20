@@ -61,6 +61,8 @@ install_dependencies() {
 	sudo apt install -y build-essential
 	sudo apt install -y clang
 	sudo apt install -y fuse
+	sudo apt install -y nodejs
+	sudo apt install -y npm
 }
 
 #Main function
