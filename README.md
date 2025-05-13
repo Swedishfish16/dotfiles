@@ -1,1 +1,1 @@
-git clone https://github.com/yourusername/yourrepo.git "${XDG_CONFIG_HOME:-$HOME/.config}"/nvim
+git clone https://github.com/Swedishfish16/dotfiles.git "${XDG_CONFIG_HOME:-$HOME/.config}"/nvim
