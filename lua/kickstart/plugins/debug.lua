@@ -80,6 +80,9 @@ return {
   config = function()
     local dap = require 'dap'
     local dapui = require 'dapui'
+    require('mason').setup()
+
+    local mason_registry = require 'mason-registry'
 
     require('mason-nvim-dap').setup {
       -- Makes a best effort to setup the various debuggers with
@@ -95,6 +98,9 @@ return {
       ensure_installed = {
         -- Update this to ensure that you have the debuggers for the langs you want
         'delve',
+        'codelldb',
+        'netcoredbg',
+        'java-debug-adapter',
       },
     }
 
@@ -117,6 +123,36 @@ return {
           terminate = '⏹',
           disconnect = '⏏',
         },
+      },
+      -- Enable all UI components
+      layouts = {
+        {
+          elements = {
+            { id = 'stacks', size = 0.25 },
+            { id = 'breakpoints', size = 0.25 },
+            { id = 'scopes', size = 0.25 },
+            { id = 'watches', size = 0.25 },
+          },
+          size = 40,
+          position = 'left',
+        },
+      },
+    }
+
+    dap.configurations.java = {
+      {
+        name = 'Debug Attach (8000)',
+        type = 'java',
+        request = 'attach',
+        hostName = '127.0.0.1',
+        port = 8000,
+      },
+      {
+        name = 'Debug Attach (5005)',
+        type = 'java',
+        request = 'attach',
+        hostName = '127.0.0.1',
+        port = 5005,
       },
     }
 
